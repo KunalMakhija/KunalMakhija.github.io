@@ -1,4 +1,10 @@
-Program to track streamers on Twitch.tv
+Codebase for my twitch streamer tracker program
+
+Future updates include:
+
+- Publishing site
+- Thematic updates
+- Re-script in React
 
 Image here
 
