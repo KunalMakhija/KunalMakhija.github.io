@@ -1,88 +1,80 @@
 <html>
-		<head>
-				<title>Streamer Tracker - Kunal Makhija</title>
-
-
-				<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-				<!-- Optional theme -->
-				<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+	<head>
+		<title>Streamer Tracker</title>
 		
-				<link rel="stylesheet" href="../css/main.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-				<script src="https://code.jquery.com/jquery-3.1.1.min.js"
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+		
+		<link rel="stylesheet" href="../css/main.css">
+
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"
 				integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
 				crossorigin="anonymous">
-				</script>
-				<script src="https://d3js.org/d3.v3.min.js"></script>
-				<script src="https://momentjs.com/downloads/moment.js"></script>
-				<script src="https://momentjs.com/downloads/moment-timezone-with-data-2010-2020.js"></script>
+		</script>
+		<script src="https://d3js.org/d3.v3.min.js"></script>
+		<script src="https://momentjs.com/downloads/moment.js"></script>
+		<script src="https://momentjs.com/downloads/moment-timezone-with-data-2010-2020.js"></script>
 
-				<script>
-					(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-					(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-					m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-					})(window,document,'script','https://		www.google-analytics.com/analytics.js','ga');
-					ga('create', 'UA-38928749-4', 'auto');
-					ga('send', 'pageview');
-				</script>
-		</head>
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-38928749-4', 'auto');
+			ga('send', 'pageview');
+		</script>
+	</head>
 
-		<body>
-
-				<div class="container">
-						<div class="col-lg-12">
-								<div class="row col-lg-12 text-center">
-										<h2><span id="headline"> X's streaming schedule</span></h2>
-										<h3> Timezone - <span id="timezone"></span></h3>
-								</div>
-
-								<div class="row">
-										<div id="chart"></div>
-								</div>
-
-								<div id="urlForm" class="row col-xs-offset-3">
-										<div class="col-xd-12">
-												<label class="form-control-label"> Streamer URL</label>
-										</div>
-
-										<div class="col-xs-6">
-												<input type="text" class="form-control" id="stream_url">
-										</div>
-
-										<div class="col-xs-3">
-												<button type="submit" class="btn btn-primary" id="submit">Submit</button>
-										</div>
-
-										<div class="col-xs-12" style="padding-top:10px">
-												<small class="form-text text-muted">Example: <br>
-												- https://www.twitch.tv/Arteezy
-												<br>
-												- https://www.twitch.tv/Arteezy/
-												<br>
-												- Arteezy
-												<br>
-												</small>
-										</div>
-
-								</div>
-
-								<div class="row col-xs-offset-3" style="margin-top:30px">
-										<div class="col-xs-12">
-												<label class="form-control-label"> Direct URL for sharing</label>
-										</div>
-										<div class="col-xs-8">
-												<input type="text" class="form-control" id="direct_url">
-										</div>
-
-								</div>
-						</div>
+	<body>
+		<div class="container">
+			<div class="col-lg-12">
+				<div class="row col-lg-12 text-center">
+					<h2><span id="headline">Streaming schedule of X</span></h2>
+					<h3>Timezone - <span id="timezone"></span> </h3>
 				</div>
 
-				<script src="main.js"></script>
 
-				<script>
-						function process_data(videos_json_data) {
+				<div class="row">
+					<div id="chart"></div>
+				</div>
+
+				<div id="urlForm" class="row col-xs-offset-3">
+					<div class="col-xs-12">
+						<label class="form-control-label">Streamer URL</label>
+					</div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control" id ="stream_url">
+					</div>
+					<div class="col-xs-3">
+						<button type="submit" class="btn btn-primary" id="submit">Submit</button>
+					</div>
+
+					<div class="col-xs-12" style="padding-top:10px">
+						<small class="form-text text-muted">Example: <br>
+							- https://www.twitch.tv/Arteezy <br>
+							- https://www.twitch.tv/Arteezy/ <br>
+							- Arteezy <br>
+						</small>
+					</div>
+
+				</div>
+
+				<div class="row col-xs-offset-3" style="margin-top:30px">
+					<div class="col-xs-12">
+						<label class="form-control-label">Direct URL for sharing</label>
+					</div>
+					<div class="col-xs-8">
+						<input type="text" class="form-control" id ="direct_url">
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="main.js"></script>
+
+		<script>
+			function process_data(videos_json_data) {
 				var MIN_RECORD_TIME = 1800; // 30 mins = 1800 secs
 				var user_tz = moment.tz.guess();
 				var data = [];
@@ -132,7 +124,7 @@
 					url: api, 
 					success: function(result){
 						$("#headline").html("Streaming schedule of " + stream_id);
-						$("#direct_url").val("https://tungnk1993.github.io/WhenStreamerOnline/?id=" + stream_id);
+						$("#direct_url").val("https://KunalMakhija.github.io/StreamerTracker/?id=" + stream_id);
 						//console.log(result);
 						console.log("Videos found", result["_total"]);
 						var punch_data = process_data(result["videos"]);
@@ -156,9 +148,9 @@
 			};
 			function process_input(stream_url) {
 				/*	Accept
-					- https://www.twitch.tv/admiralbulldog
-					- https://www.twitch.tv/admiralbulldog/
-					- admiralbulldog
+					- https://www.twitch.tv/Arteezy
+					- https://www.twitch.tv/Arteezy/
+					- Arteezy
 				*/
 				var stream_regex = /[^\/]+(?=\/$|$)/g;
 				var stream_id = stream_url.trim().match(stream_regex);
@@ -178,17 +170,17 @@
 				});
 			});
 		</script>
-		</body>
+	</body>
 
-		<footer style="margin-top:30px">
+	<footer style="margin-top:30px">
 		<div class="container">
-				Have a feedback? Send an email to <a href="mailto:makhija.kunal@gmail.com?Subject=Feedback for WhenStreamerOnline">makhija.kunal@gmail.com</a>
+				Have a feedback? Send an email to <a href="mailto:Makhija.Kunal@gmail.com?Subject=Feedback for Streamer Tracker">Makhija.Kunal@gmail.com</a>
 				<p class="text-muted">Last updated on March 28 2017.<br>
-				Credit <a href="http://bl.ocks.org/kaezarrex/10122633">punch card visualization</a><br>
-				Help from <a href="https://www.reddit.com/r/Twitch/comments/5pvsfi/made_a_simple_tool_to_find_out_what_a_streamers/">Reddit Thread</a>
+				Credit <a href="http://bl.ocks.org/kaezarrex/10122633">punch card visualization</a>
 				<br>
-				Idea credit to Khac Tung
+				Additional Credit to Khac Tung
 			</p>
+
 			</div>
 	</footer>
 </html>
